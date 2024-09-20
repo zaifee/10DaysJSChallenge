@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function in Js</title>
+</head>
+<body>
+    <h1>functions </h1>
+</body>
+<script>
+    function checkEvenOrOdd(num){
+        if(num % 2 == 0){
+            console.log("Even Number..");
+        }else{
+            console.log("It's a odd Number ");
+        }
+    }
+
+    // checkEvenOrOdd(23);
+
+//     function checkSquare(num){
+//         return num*num;
+//     }
+
+//    const res =  checkSquare(9);
+//    console.log("Square of Num: ", res);
+
+
+
+// Activity-2 Max of two numbers 
+
+    function maxOfTwoNumb(num1, num2){
+        if(num1 > num2){
+            console.log(`Num1 is greater ${num1} `);
+        }else{
+            console.log(`Num2 is greater `);
+        }
+    }
+
+    // maxOfTwoNumb(3, 4); 
+
+    // Activity 2
+    function concateTwoStrings(str1, str2){
+        return (str1 + str2);
+    }
+
+    let fullName = concateTwoStrings(" Mohd", " Nawaz ");
+    // console.log(fullName);
+
+
+   const res = (num1, num2) => {
+        return num1 + num2;
+    }
+
+    let ans = res(3, 4);
+    // console.log(ans);
+
+
+    function checkSpecificChar(str){
+        for (let index = 0; index < str.length; index++) {
+              if(str[index] == '#' || str[index] == '?' || str[index] == '/'){
+                    console.log(`Unkown Character found in the String ${str[index]}`);
+                    // return false; 
+              }
+               
+        }
+        return true;
+    }
+
+    // let str = checkSpecificChar("Nawaz#1");
+    // console.log(str);
+
+
+//     function productOfTwoNumb(num1, num2 = 3){
+//         return num1*num2;
+//     }
+
+//    const result = productOfTwoNumb(2, 9);
+//    console.log(result);
+
+
+    function greetingMsg(name , age = 18){
+        console.log(`${name} Happy Birthday ! you're turned to 18 `);
+    }
+
+    // const name = prompt("Enter your name: ");
+    // greetingMsg(name);
+
+
+// Activity 5 - High Order function 
+    function sayHello(){
+       console.log("Say Hello !");
+    }
+
+    function higherOrder(fn, num){
+        for(let i=0; i<num; i++){
+            fn();
+        }
+
+    }
+
+    higherOrder(sayHello, 5);
+
+
+    // task 2: 
+    function highOrderFunction(fn1, fn2, val){
+
+        const res = fn1(val);
+        const res2 = fn2(res);
+
+        return res2;
+    }
+
+    function add(x){
+        return x + 4;
+    }
+
+    function sub(x){
+        return x - 4;
+    }
+
+    const result = highOrderFunction(add, sub, 5);
+    console.log("Value after processing res is: ", result);
+
+
+
+
+    </script>
+</html>

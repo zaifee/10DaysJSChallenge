@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops</title>
+</head>
+<body>
+    <h1>Loops in JS</h1>
+</body>
+<script>
+    // for (let index = 1; index <= 10; index++) {
+    //     console.log(index);
+    // }
+
+    // for (let index = 1; index <= 10; index++) {
+    //     console.log(index * 5);
+    // }
+
+    // Activity - 2
+    let index = 1;
+    let sum = 0;
+    while(index <= 10){
+         sum += index;
+        index++;
+    }
+    // console.log("Sum from 1 to 10 is: " , sum);
+
+
+    // 10 to 1 counting  -- mistake don't use const
+    // let num = 10;
+    // while(num != 0){
+    //     console.log(num);
+    //     num--;
+    // }
+
+    // do while loop 
+    // let nums = 1;
+    // do{
+    //     console.log(nums);
+    // }while(nums <= 5){
+    //     console.log(nums);
+    //     nums++;
+    // }
+
+
+    function factorial(num){
+        let result = 1;
+        let i = num;
+
+        do{
+            result *= i;
+            i--;
+        }while(i > 0)
+            return result;
+    }
+
+    const num = 4;
+    // console.log(`Factorial of a num is : `, factorial(num));
+
+
+//  star pattern 
+    let n = 6;
+    for(let row = 0; row < n; row++){
+        let str = ' ';  
+        for(let col = 0; col < row+1; col++){
+                str += '#';
+        }
+         console.log(str);
+    }
+
+
+
+    // Using continue statement 
+    for(let i = 1; i <= 6; i++){
+        if( i == 5){
+            continue;
+        }
+        // console.log(i);
+    }
+
+    //uisng break statement 
+    for(let i = 1; i <= 10; i++){
+        if(i == 7){
+            break;
+        }
+        console.log(i);
+    }
+
+    
+
+
+
+
+
+
+
+
+
+</script>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+</head>
+<body>
+
+    <h1>Arrays</h1>
+</body>
+<script>
+    const arr = [1, 2, 3, 4, 5];
+    console.log(arr);
+
+    // console.log(arr[1]);
+    // console.log(arr[5]);
+
+
+    arr.push(6);
+    console.log(arr);
+    arr.pop();
+    console.log(arr);
+
+    arr.shift();
+    console.log(`After using shift Method our array will be like ${arr}`); //delete the value from the starting of the array
+
+    arr.unshift("NawazThezaifre"); //add the element in starting 
+    console.log(arr);
+
+    const brr = [1, 2, 3, 5, 6];
+
+    const res = brr.map( item => item * 2);
+    console.log(`Value after performing map Operation `, res);
+
+
+    const filterMethod = brr.filter( item => item % 2 == 0);
+    console.log(`Value of the array after performing reduce Method `, filterMethod);
+
+
+    //Task we have to find the sum 
+    //traditional way of finding the sum of array 
+    
+    // function findSum(brr){
+    //     let sum = 0;
+    //     for(let i = 0; i<brr.length; i++){
+    //         sum += brr[i];
+    //     }
+    //     return sum;
+       
+    // }
+    // const res1 = findSum(brr);
+    // console.log(res1);
+
+    //Now using reduce Method 
+    const res1 = brr.reduce(function (acc, curr) {
+        acc = acc + curr;
+        return acc; 
+        //acc acting as a storage box like in the above code sum act as buffer 
+    }, 0);
+    
+    console.log("Value after performing reduce Operation on the array : ", res1);
+
+    //finding max using reduce 
+
+    const res2 = brr.reduce(function (acc, curr) {
+        if(curr > acc){
+            acc = curr;
+        }
+        return acc;
+    }, 0);
+
+    console.log("Value after performing reduce Method on the array: ", res2);
+
+
+
+    //real life example of map, filter and reduce 
+    const users = [
+        {firstName: "Mohd", lastName: "Nawaz", age: 23},
+        {firstName: "Mohammad", lastName: "Humza", age: 22},
+        {firstName: "Sammer", lastName: "Anjum", age: 28},
+        {firstName: "Mohd", lastName: "faiz", age:  32},
+];
+
+//we have a task of finding fullName from list of users 
+
+const output = users.map( x => x.firstName + " " + x.lastName);
+console.log(output);
+
+// Now we want count of age 
+const output1 = users.reduce( (acc, curr) => {
+    if(acc[curr.age]){
+        acc[curr.age]++;
+
+    }else{
+        acc[curr.age] = 1;
+    }
+
+    return acc; //previously we were returning wrong value
+}, {});
+
+console.log("Value after performing reduce operation on the users obj ", output1);
+
+//find out the first the firstName of all people whose age 30;
+//chaining concept in js
+// const output2 = users.filter( item => item.age < 30).map( x => x.firstName);
+// console.log(output2);
+
+const output2 = users.reduce( (acc, curr) => {
+    if(curr.age < 30){
+       acc.push(curr.firstName);
+    }
+    return acc;
+}, []);
+
+console.log(`First Name of all people whose age is less than 30  ${output2}`);
+
+for (let index = 0; index < arr.length; index++) {
+    const element = arr[index];
+    console.log(element);
+}
+
+console.log("Printing Using for Each loop: ");
+brr.forEach(element => {
+    console.log(element);
+});
+
+
+//creating a two dimensional array 
+const array = [
+    [1, 2, 3, 4, 5],
+    [1, 2, 3, 5, 4],
+    [4, 1, 4, 3, 2]
+];
+
+// for (let index = 0; index < array.length; index++) {
+//     const element = array[index];
+//     console.log(element);    
+// }
+
+// Accessing and logging specific array element from the array 
+console.log("Accessing specific 2d array element: ");
+const result = array[1][3];
+console.log(result);
+</script>
+
+</html>

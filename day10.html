@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Listner</title>
+    <style>
+        #secPara{
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<body>
+    <!-- tabIndex helps to focus on that element and we can listen the event trigger on that element -->
+    <p id="para" tabindex="0">Hello ! Paragraph </p>
+    <div class="img-container">
+        <img src="profile1.jpeg" class="img" width=" 200px" height="200px">
+    </div>
+    <p id="secPara"> This is the second para of this web Page</p>
+    <!-- <input type="text" > -->
+    <form id="fm">
+        <input type="text" id="username" placeholder="First Name" required> <br>
+
+        <input type="password" id="password" placeholder="password" required > <br>
+        <input type="submit" value="Register Details">
+    </form>
+
+
+
+    <select id="dropdown">
+        <option value="option1">option1</option>
+        <option value="option2">option2</option>
+        <option value="option3">option3</option>
+    </select>
+
+
+
+    <p id="selectedpara"></p>
+
+</body>
+
+
+<script>
+    // Activity - 1;
+// task1
+document.querySelector('#para').addEventListener('click', function() {
+
+document.querySelector('#para').innerHTML = "This is the new content of HTML";
+
+});
+
+
+
+//  Task2:
+// document.querySelector(".img-container").addEventListener('dblclick', function() {
+
+//     const img = document.querySelector('.img');
+
+//     if(img.style.display === 'none' || img.style.display === ' '){
+//         img.style.display = 'block';
+
+//     }else{
+//         img.style.display = 'none';
+//     }
+    
+// });
+
+
+// Mouse Event  -- Activity 2
+
+document.querySelector('#secPara').addEventListener('mouseover', (event) => {
+    event.target.style.backgroundColor = "yellow";
+});
+
+
+// Task 2 --> TaskAllowance -- Task All 
+document.querySelector('#secPara').addEventListener('mouseout', (event) => {
+    event.target.style.backgroundColor = "skyblue";
+});
+
+// Activity 3 - keyboards Events 
+// document.querySelector('#para').addEventListener('keypress', (e) => {
+//     console.log(e.key);
+// })
+
+
+// Activity 3 -- keypress 
+// Input is a focusable event where we can focus 
+// document.querySelector('input').addEventListener('keypress', (e) => {
+//     console.log(e.key);
+// })
+
+// window.addEventListener('keydown', (e) => {
+//     console.log(e.code);
+//     console.log(e.key);
+    
+// })
+const p1  = document.querySelector('#para');
+const ip = document.querySelector('input')
+ip.addEventListener('keyup', (e) => {
+    // console.log('Using keyup: ' , e.code);
+    // console.log('Using keyup: ' , e.key);
+
+    p1.textContent = ' CurrentValue ' + e.target.value;
+});
+
+
+const form = document.querySelector('fm');
+
+fm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const username = document.querySelector('#username').value;
+    const password = document.querySelector('#password').value;
+    console.log('Username', username);
+    console.log('passoword', password);
+
+});
+
+const dropdown = document.querySelector('#dropdown');
+
+const 
+
+
+
+
+
+
+
+</script>
+</html>

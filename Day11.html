@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 9 -- Promises and Async await </title>
+</head>
+<body>
+    <h1>Promises in JS </h1>
+</body>
+<script>
+    const p = new Promise((resolve, reject) =>{
+        setTimeout( () => {
+            console.log("Promise is resolved after 2 seconds ");
+        }, 2000)
+    });
+
+
+    const p1 = new Promise( (resolve, reject) => {
+        setTimeout(() => {
+            const Err = new Error("Not valid");
+            reject(Err);
+        }, 2000);
+       
+    });
+
+    p1.catch(error => {
+        console.log("Handled the Error successfully");
+    });
+
+
+    // Activity- 2 : Sequence of Promises 
+    const cart = ["kurta", "pajama", "jeans", "trowsers"];
+    
+</script>
+</html>

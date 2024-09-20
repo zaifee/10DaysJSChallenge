@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day-7 Objects</title>
+</head>
+<body>
+    <h1>Ojbects </h1>
+</body>
+
+<script>
+const books = {
+    title: "Maths",  
+    Author: "NCERT",
+    Year: 2001,
+    getDetails: function(){
+        return `Title: ${this.title}, Author: ${this.Author} `
+    },
+    changeYear: function(year){
+        this.Year = year;
+    }
+    
+}
+// Activity - 1
+console.log(books);
+
+// create a symbol 
+const mySymbol = Symbol("keys1");
+
+// console.log(books);
+console.log(books["title"]);
+console.log(books["Author"]);
+
+// Activity - 2
+
+console.log(books.getDetails());
+books.changeYear(2005);
+
+console.log(books["Year"]);
+
+const obj1 = {
+    title: "English",  
+    Author: "helloJi",
+    Year: 2002,
+    library: {
+        name: "Central",
+        books: ["Maths", "English", "Hindi", "SSt", "SocialScience"]
+    },
+
+    getTitleAndYear: function(){
+        return `Year ${this.Year} and title ${this.title} `;
+    }
+
+}
+
+
+// console.log(obj1.library); 
+
+// Activity - 4
+// console.log(obj1.getTitleAndYear());
+
+
+// Activity - 5: object Iteration 
+console.log("Obj iteration using for-In loops: ");
+ for (const key in obj1) {
+    if (obj1.hasOwnProperty.call(obj1, key)) {
+       console.log(`${key}: ${obj1[key]}`);
+    }
+    
+ }
+
+// Task 2: obj.keys and obj.values 
+console.log("Printing the Objects keys ");
+Object.keys(obj1).forEach(key => {
+    console.log(key);
+});
+
+console.log("Printing the Object values: ");
+Object.values(obj1).forEach( val => {
+    console.log(val);
+})
+
+
+</script>
+</html>

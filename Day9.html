@@ -1,0 +1,93 @@
+<!-- <!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 9 DOM</title>
+</head>
+<style>
+    .hightlight{
+        background-color: yellow;
+        border-radius: 2rem;
+    }
+    
+</style>
+<body>
+    <div>
+        <h1 id="heading">Hello ji</h1>
+        <h2 class="head2">Changing BG Color</h2>
+        <img src="profile1.jpeg" class="pg" alt="My Pic" height="100px" width="100px" srcset="">
+    </div>
+
+    <ul id="GeneralList" >
+        <li>Home</li>
+        <li>About</li>
+        <li>Contact</li>
+    </ul>
+
+    <button onclick= "toggleClass()" class="btn">
+        <p>Hello ! This is the second para that you're going to read now</p>
+    </button>
+
+    
+</body>
+<script>
+// Activity-1: Selecting and Manipulating HTML elements
+document.querySelector('#heading').innerHTML = "Changing content of h1";
+//Task2: Changing background color
+const colorSet = document.querySelector('.head2');
+colorSet.style.color = "yellow";
+
+
+// Activity2: Creating and appending elements
+// Task3:
+const para = document.createElement('p');
+para.innerText = "hello ! This is the Day9 Challenge of JS but I'm completing it on day 10..";
+document.body.append(para);
+
+// Task4
+// Adding newLi in the existing li
+// const newLi = document.createElement('li');
+// const text = document.createTextNode("PhoneNo");
+// newLi.appendChild(text);
+// document.getElementById('GeneralList').appendChild(newLi);
+
+const newLi = document.createElement('li');
+const text = document.createTextNode("Adding New item ");
+newLi.append(text);
+document.getElementById('GeneralList').appendChild(newLi);
+
+
+// Activity3: Removing Elements
+// const remHead = document.getElementById('heading').remove();
+
+ const lastElement = document.querySelector('#GeneralList');
+// lastElement.removeChild(lastElement.firstElementChild);
+
+
+// // Activity - 4 (Modifying Attibutes and classes)
+document.querySelector(".pg").src = "stamp.jfif";
+
+function addClass(){
+    document.getElementById('heading').classList.add("hightlight");
+}
+
+
+function toggleClass(){
+    const headi = document.getElementById('heading');
+    headi.classList.toggle('hightlight');
+   
+}
+
+// Activity 5: Event Handling 
+// Task 9: 
+
+document.querySelector(".btn").addEventListener("click", function(){
+    document.getElementById(".btn").innerHTML = "You're hacked";
+});
+
+
+
+</script>
+</html>
+  

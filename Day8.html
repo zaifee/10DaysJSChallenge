@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6+ features</title>
+</head>
+<body>
+    <h1>ES6+ features</h1>
+</body>
+<script>
+    // Activity 1 
+
+    //Task1
+    let str = "Mohammad Nawaz", age = 23;
+    console.log(`Name: ${str} and age ${age}`);
+
+    //Task2
+    let str1 = ` Hello ! I'm 
+    Mohd Nawaz B.Tech IT 2024 
+    graduate `
+
+    console.log(str1);
+
+    // Activity-2 
+    
+    // Desturctring in Array
+    let a, b;
+    const arr = [1, 2, 3, 4, 5];
+    [a, , , b] = arr;
+    console.log("The value of a is: ", a);
+    console.log("The vlaue of b is: ", b);
+    
+
+    // Destrutruing in case of obj
+    const book = {
+        title: "Maths",
+        Author: "Rs Aggarwal"
+    }
+        // keys         = obj
+    const {title, Author} = book;
+    console.log("Title of the book is: ", title);
+    console.log("Author of the book is: ", Author); 
+
+
+
+    // Activity - 3
+
+    // Task5: Spread operator is used to merge, copying an array element from one array to another array and it is represented as with three dots ...
+    const brr = [1, 2, 3,4, 5];
+    const newArr = [6, 7, ...brr];
+    // console.log("New Array after applying spreadOfOperator: ", newArr);
+
+    // Task6: Use Rest Operator to sum the arbitary number of arguments 
+    function arbitarySum(... item){
+        const total = item.reduce( (acc, item) => acc +item, 0);
+        return total;
+    }
+
+    console.log("Result after adding arbitary number using rest Operator ", arbitarySum(3, 4, 5,6, 7));
+
+
+
+    // Activity - 4 -- Default Parameters 
+    function productOfTwo(num1 , num2 = 4){
+        return num1*num2;
+    }
+    console.log("Returning the product without using second parameters", productOfTwo(2));
+    console.log("Returning the product with using second parameters", productOfTwo(2, 3));
+
+    // Activity - 5 Using enhanced Object Literals 
+    //Using enhanced object literals 
+    const name = "Mohd"
+    const Age = 23;
+    const person = {
+        name,
+        age,
+
+        greet: function(){
+            console.log(`Hello my name is ${name} and I'm ${Age} years old `);
+
+        },
+        updateName(newName){
+            this.name = newName;
+           console.log(`My name is ${this.name}`);
+        }
+
+    }
+
+    console.log(person);
+
+    // Task2:
+    console.log(person.greet());
+
+    
+
+
+
+
+
+
+
+
+
+</script>
+</html>

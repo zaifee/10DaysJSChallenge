@@ -1,0 +1,29 @@
+body{
+    margin-top: 100px;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+}
+.count{
+    font-size: 3rem;
+    font-weight: 500;
+}
+
+
+
+button{
+    background-color: cyan;
+    font-size: 1rem;
+    padding: 10px 16px;
+    border: 1px solid grey;
+    border-radius: 4px;
+    cursor: pointer;
+    
+}
+
+input{
+    height: 3rem;
+    width: 3rem;
+    font-size: 1rem;
+    margin: 15px 8px;
+
+}
